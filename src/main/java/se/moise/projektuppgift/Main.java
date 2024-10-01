@@ -10,13 +10,16 @@ public class Main {
         Random rand = new Random();
 
         System.out.println("Välkommen till min Yatzy poäng spel! ");
+
+//---------------------------------------------------------------------------------------------->
+
         System.out.println("Ange ditt namn: för spelare 1: ");
         Player player1 = new Player(scanner.nextLine());
 
         System.out.println("Ange ditt namn: för spelare 2: ");
         Player player2 = new Player(scanner.nextLine());
 
-
+//---------------------------------------------------------------------------------------------->
 
         while (true) {
             int player1sum = 0;
@@ -29,6 +32,7 @@ public class Main {
                 System.out.println(" Fick poäng " + roll);
                 delay();
                 System.out.println();
+                player1.extraMarkers();
 
 //------------------------------------------------------------------------------------------->
             }
@@ -40,26 +44,29 @@ public class Main {
                 System.out.println(" Fick poäng " + roll);
                 delay();
                 System.out.println();
+                player2.extraMarkers();
 
 //-------------------------------------------------------------------------------------------->
 
             }
 
-
             System.out.println(player1.getName() + " " + player1sum);
-            System.out.println(player1.getName() + " " + player2sum);
+            System.out.println(player2.getName() + " " + player2sum);
 
             if (player1sum > player2sum) {
                 System.out.println("Spelare 1 vann!");
             } else if (player1sum < player2sum) {
                 System.out.println("Spelare 2 vann!");
             } else {
-                System.out.println("Lika");
+                System.out.println("OAVGJORT");
             }
+
+//------------------------------------------------------------------------------------------->
 
             System.out.println("Vill du försöka/spela igen? (JA/NEJ): ");
             String response = scanner.nextLine();
             if(response.equals("NEJ")) {
+                System.out.println("Tack för att du spelade spelet...! ");
                 break;
             }
 
